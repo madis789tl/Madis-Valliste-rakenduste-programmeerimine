@@ -55,36 +55,27 @@ console.log(addNumbersNestedAF(9)(102));
 
 // 7. Ülesanne: AF printida "Hello (nimi)" ja kasutada string literals
 
-const greet = (name = "world") => 'hello $(name)';
+const greet = (name = "World") => `Hello ${name}`;
 
-console.log (greet());
-console.log (greet("raimo"));
-
+console.log(greet());
+console.log(greet("Raimo"));
 
 // Teema: map ja filter
 
 // 8. Ülesanne: liita igale elemendile juurde +5, et uuel muutujale omandaks [6, 7, 8, 9, 10] väärtuse
 
+const newArray = [1, 2, 3, 4, 5];
+
+const addedArray = newArray.map((element) => element + 5);
+
+console.log(addedArray);
+
 // 9. Käime läbi ka erinevaid 3 parameetrit, mida saab map ja filtriga välja kutsuda
 
-// 10. Muudame objektiks, et console.log-ides oleks paremini märgata
+const threeParameters = newArray.map((element, index, array) => {
+  console.log(element, index, array);
 
-// Filter
+  const added = 1 + 2;
 
-// 11, Ülesanne: filtreerida välja uuesti massiivist kõik elemendid, mis on suuremad kui 4
-
-// 12. Ülesanne: Luua nimede massivi põhjal objektide massiv, mis koosneb sellisel kujul objektidest:
-
-// {
-//   name: 'Anni',
-//   age: 24,
-//   email: 'anni@company.com',
-//   address: 'Anni Street 55',
-//   username: 'innA'
-// }
-
-// 13. Tahame juurde lisada pikkuse ja jätta eelnevad kõik andmed samaks, spread syntax
-
-// 14. Tahame muuta eelnevatest andmetest midagi jättes teised samaks
-
-// 15. == / ===
+  return element + 5;
+});
