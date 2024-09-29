@@ -8,7 +8,6 @@ const {
 
 router.use(todoRouteMiddleware);
 
-// /cats/ Get endpoint level middleware
 router.get("/", todoGetRouteMiddleware, todoController.read);
 router.post("/", todoController.create);
 router.put("/:id", todoController.update);
