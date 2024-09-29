@@ -1,5 +1,7 @@
 const express = require("express");
 const cors = require("cors");
+const catsRoutes = require("./routes/cats.routes");
+const todoRoutes = require("./routes/todo.routes");
 const app = express();
 const morgan = require("morgan");
 const port = 8080;
@@ -9,6 +11,7 @@ app.use(morgan("dev"));
 
 const catsRoutes = require("./routes/cats.routes");
 const exampleRoutes = require("./routes/example.routes");
+app.use("/todo", todoRoutes);
 
 app.use(express.json());
 
